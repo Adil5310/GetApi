@@ -2,6 +2,7 @@ import 'dart:convert';
 import 'package:flutter/material.dart';
 import 'package:learningapi/models/PostsModel.dart';
 import 'package:http/http.dart' as http;
+import 'package:learningapi/screens/screen2.dart';
 class HomeScreen extends StatefulWidget {
   const HomeScreen({Key? key}) : super(key: key);
 
@@ -30,7 +31,10 @@ class _HomeScreenState extends State<HomeScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Center(child: Text("API Learning")),
+        title: const Center(child: Text("Get API"),),
+        actions: [IconButton(onPressed: (){
+          Navigator.of(context).push(MaterialPageRoute(builder: (context)=> Screen2()));
+        }, icon: Icon(Icons.skip_next))],
       ),
       body: Column(
         children: [

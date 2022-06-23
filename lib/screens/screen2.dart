@@ -2,6 +2,7 @@ import 'dart:convert';
 
 import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
+import 'package:learningapi/screens/screen3.dart';
 class Screen2 extends StatefulWidget {
   const Screen2({Key? key}) : super(key: key);
 
@@ -30,6 +31,9 @@ class _Screen2State extends State<Screen2> {
     return Scaffold(
       appBar: AppBar(
         title: Center(child: const Text('Photo API')),
+        actions: [IconButton(onPressed: (){
+          Navigator.of(context).push(MaterialPageRoute(builder: (context)=> Screen3()));
+        }, icon: Icon(Icons.skip_next))],
       ),
       body: Column(
         children: [
